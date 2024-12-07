@@ -38,10 +38,6 @@ php artisan config:clear
 php artisan cache:clear
 php artisan view:clear
 
-# Set production environment variables if needed
-export APP_ENV=production
-export APP_DEBUG=false
-
 # Your existing commands
 php artisan migrate:fresh --force && \
 php artisan db:seed --force && \
