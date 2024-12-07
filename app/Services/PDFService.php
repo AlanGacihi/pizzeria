@@ -7,12 +7,23 @@ use App\Models\Category;
 use App\Models\Pizza;
 use App\Models\Order;
 
+
 class PdfService
 {
     private $pdf;
 
     public function __construct()
     {
+        // Define TCPDF paths
+        if (!defined('K_PATH_CACHE')) {
+            define('K_PATH_CACHE', storage_path('app/pdf/cache/'));
+        }
+
+        // Ensure cache directory exists
+        if (!file_exists(K_PATH_CACHE)) {
+            mkdir(K_PATH_CACHE, 0755, true);
+        }
+
         // Initialize TCPDF
         $this->pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8');
 
