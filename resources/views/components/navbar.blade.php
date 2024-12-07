@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex-shrink-0 flex items-center">
-                <a href="{{ route('dashboard') }}">
+                <a href="{{ route('home') }}">
                     <img class="h-9 w-auto" src="{{URL::asset('/images/pizzeria-logo.svg')}}" alt="Pizzeria Logo">
                 </a>
             </div>
