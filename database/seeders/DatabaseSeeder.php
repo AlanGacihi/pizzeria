@@ -19,10 +19,16 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => 'password',
+            'is_admin' => 0,
         ]);
 
-        $user = User::find(1); // Find the user by ID
-        $user->is_admin = true;
-        $user->save();
+        // Create an admin user with password 'admin'
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => 'admin',
+            'is_admin' => 1,
+        ]);
     }
 }
